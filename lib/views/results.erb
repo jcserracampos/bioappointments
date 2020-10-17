@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Controle de Ponto</title>
+    <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' />
+  </head>
+  <body class='container'>
+    <h1><%= @title %></h1>
+    <table>
+        <tr>
+            <th>Horário</th>
+            <th>Tipo</th>
+        </tr>
+        <% @appointments.each do | appointment | %>
+            <tr>
+                <td><%= DateTime.parse(appointment.last).strftime("Dia %d %b %Y às %I:%M") %></td>
+                <td><%= CHOICES[appointment.first] %></td>
+            </tr>
+        <% end %>
+    </table>
+
+  </body>
+</html>
