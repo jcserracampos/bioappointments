@@ -1,0 +1,2 @@
+class MonthlyAppointments
+end

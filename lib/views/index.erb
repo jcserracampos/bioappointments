@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Folha de Ponto</title>
+    <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' />
+  </head>
+  <body class='container'>
+    <p>Selecione um tipo de ponto</p>
+    <form action='ponto' method='post'>
+      <ul class='unstyled'>
+        <% CHOICES.each do |id, text| %>
+          <li>
+            <label class='radio'>
+              <input type='radio' name='type' value='<%= id %>' id='type_<%= id %>' />
+              <%= text %>
+            </label>
+          </li>
+        <% end %>
+      </ul>
+      <button type='submit' class='btn btn-primary'>Lançar ponto!</button>
+    </form>
+  </body>
+</html>
